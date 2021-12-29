@@ -21,6 +21,8 @@ export const AddAlbum = () => {
             let path = '/'; 
             navigate(path);
             updateText('');
+        }else{
+            alert('Please provide a title for the new album');
         }
     }
 

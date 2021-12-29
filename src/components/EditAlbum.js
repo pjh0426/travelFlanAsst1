@@ -18,6 +18,7 @@ export const EditAlbum = () => {
         const albumId = currentId;
         const selectedAlbum = albumList.find(a => a.id === albumId);
         setSelectedAlbum(selectedAlbum);
+        updateText(selectedAlbum.title);
     }, [currentId, albumList])
 
     const handleSubmit = (event) => {
