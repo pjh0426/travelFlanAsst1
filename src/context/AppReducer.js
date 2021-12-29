@@ -11,7 +11,7 @@ export default (state, action) => {
     case 'UPDATE_ITEM':{
         const updatedAlbum = action.payload;
         const updatedAlbums = state.albumList.map(item => {
-            if(item.id === Number(updatedAlbum.id)){
+            if(item.id == updatedAlbum.id){
                 return updatedAlbum;
             }
             return item;

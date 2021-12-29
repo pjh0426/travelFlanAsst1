@@ -11,12 +11,12 @@ export const EditAlbum = () => {
         title: ''
     });
     const {id} = useParams();
-    const currentId = Number(id);
+    const currentId = id;
     const navigate = useNavigate ();
 
     useEffect(() => {
         const albumId = currentId;
-        const selectedAlbum = albumList.find(a => a.id === albumId);
+        const selectedAlbum = albumList.find(a => a.id == albumId);
         setSelectedAlbum(selectedAlbum);
         updateText(selectedAlbum.title);
     }, [currentId, albumList])
