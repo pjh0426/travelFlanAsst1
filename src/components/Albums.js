@@ -2,7 +2,6 @@ import React, {useContext} from 'react';
 import {Link} from 'react-router-dom';
 import {ListGroup, ListGroupItem, Button} from 'reactstrap';
 import {GlobalContext} from '../context/GlobalState';
-import '../App.css';
 
 const Albums = ({ albums, loading, error }) => {
     const {removeItemFromList} = useContext(GlobalContext);
@@ -19,11 +18,11 @@ const Albums = ({ albums, loading, error }) => {
                         <ListGroupItem className="d-flex" key = {album.id}>
                             <div className="rowC">
                                 <div className="ml-4"><img src="https://via.placeholder.com/400x150"/></div>
-                                <div className="ml-4"><strong>{album.title}</strong></div>
+                                <div className="ml-4 leftmargin"><strong>{album.title}</strong></div>
                             </div>
                             <div className="ml-auto">
-                                <Link className="btn btn-warning mr-1" to={`/edit/${album.id}`}>Edit</Link>
-                                <Button onClick={() => removeItemFromList(album.id)}color="danger">Delete</Button>
+                                <Link className="btn btn-warning mr-1 leftmargin" to={`/edit/${album.id}`}>Edit</Link>
+                                <Button className="leftmargin" onClick={() => removeItemFromList(album.id)} color="danger">Delete</Button>
                             </div>
                         </ListGroupItem>
                     ))}
